@@ -2,15 +2,19 @@ body {
   font-family: Helvetica;
 }
 
-.hamburger-nav-container {
+.container-main {
   max-width: 600px;
+  border: 1px dotted black;
+}
+
+.hamburger-nav-container {
   border: 1px solid black;
   margin: 20px auto;
   position: relative;
 }
 
 .header-container-lg {
-  max-width: 600px;
+  width: 100%;
   margin: 20px auto;
 }
 
@@ -45,7 +49,7 @@ body {
 }
 
 .tab-content-container {
-  max-width: 600px;
+  width: 100%;
   margin: 10px auto;
 }
 
@@ -55,6 +59,10 @@ body {
 }
 
 @media (max-width: 767px) {
+  .container-main {
+    padding: 10px 20px;
+    margin: 10px auto;
+  }
   .header-container-lg {
     display: none;
   }
@@ -92,6 +100,10 @@ body {
 }
 
 @media (min-width: 767px) {
+  .container-main {
+    padding: 20px 50px;
+    margin: 50px auto;
+  }
   .header-container-xs {
     display: none;
   }
