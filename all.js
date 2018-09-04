@@ -15,6 +15,9 @@ hamburger.addEventListener('click', function(event) {
 
 tabs.forEach(function(item) {
   item.addEventListener('click', function(event) {
+    if (hamburgerNav.classList.contains('expanded')) {
+      hamburgerNav.classList.remove('expanded')
+    }
     var target = event.currentTarget.dataset.target;
     tabContents.forEach(function(item) {
       item.classList.add('hidden');

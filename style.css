@@ -1,16 +1,24 @@
+body {
+  font-family: Helvetica;
+}
+
 .hamburger-nav-container {
   max-width: 600px;
   border: 1px solid black;
   margin: 20px auto;
-  padding: 5px;
   position: relative;
 }
 
+.header-container-lg {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
 .hamburger-nav {
-  background-color: green;
-  padding: 10px;
+  background-color: white;
   height: auto;
-  transition: max-height 1s ease;
+  transition: max-height 500ms ease;
+  justify-content: space-between;
 }
 
 .expanded {
@@ -18,10 +26,12 @@
 }
 
 .tab {
+  text-align: center;
+  flex: 1 0 auto;
+  text-decoration: none;
   display: block;
-  background-color: red;
-  color: white;
-  margin: 10px 10px;
+  background-color: white;
+  color: black;
   padding: 5px 10px;
 }
 
@@ -30,7 +40,8 @@
 }
 
 .active {
-  color: purple;
+  background-color: black;
+  color: white;
 }
 
 .tab-content-container {
@@ -44,26 +55,52 @@
 }
 
 @media (max-width: 767px) {
+  .header-container-lg {
+    display: none;
+  }
+  .header-container-xs h1 {
+    font-size: 18px;
+  }
+  .tab {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  .tab:first-child {
+    border-top: 1px solid black;
+  }
   .hamburger-nav-container {
+    padding: 0 20px;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
   }
   .hamburger-nav {
     flex-direction: column;
     position: absolute;
-    width: 100%;
-    left: 0;
+    width: calc(100% + 2px);
+    left: -1px;
     padding: 0;
     top: 100%;
     max-height: 0px;
     overflow: hidden;
   }
   #hamburger {
+    margin: 10px;
     display: block;
   }
 }
 
 @media (min-width: 767px) {
+  .header-container-xs {
+    display: none;
+  }
+  .tab {
+    border-right: 1px solid black;
+  }
+  .tab:last-child {
+    border: none;
+  }
   #hamburger {
     display: none;
   }
