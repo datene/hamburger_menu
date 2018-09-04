@@ -5,6 +5,7 @@ var tabContents = document.querySelectorAll('.tab-content');
 
 
 hamburger.addEventListener('click', function(event) {
+  event.preventDefault();
   if (hamburgerNav.classList.contains('expanded')) {
     hamburgerNav.classList.remove('expanded')
   } else {
@@ -18,6 +19,7 @@ tabContents.forEach(function(tabContent) {
 
 tabs.forEach(function(item) {
   item.addEventListener('click', function(event) {
+    event.preventDefault();
     var target = event.currentTarget.dataset.target;
     var targetElement = document.getElementById(target);
     var currentElement = event.currentTarget;
@@ -30,6 +32,7 @@ tabs.forEach(function(item) {
 })
 
 document.querySelector('.header-container-xs').addEventListener('click', function(event) {
+  event.preventDefault();
   clearTabs();
   document.querySelector('.tab:first-child').classList.add('active');
   clearTabContents();
