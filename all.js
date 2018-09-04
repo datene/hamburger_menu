@@ -5,10 +5,11 @@ var tabContents = document.querySelectorAll('.tab-content');
 
 
 hamburger.addEventListener('click', function(event) {
-  if (hamburgerNav.style.display === "none" || hamburgerNav.style.display === "") {
-    hamburgerNav.style.display = "block";
+  console.log(hamburgerNav.classList.contains('expanded'))
+  if (hamburgerNav.classList.contains('expanded')) {
+    hamburgerNav.classList.remove('expanded')
   } else {
-    hamburgerNav.style.display = "none";
+    hamburgerNav.classList.add('expanded')
   }
 })
 
